@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { Component } from "react";
+import "./App.css";
+import StartScreen from "./components/StartScreen";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    startScreen: true,
+    competitorPool: [],
+  };
+  API = "https://hp-api.herokuapp.com/api/characters/students";
+
+  componentDidMount() {
+    fetch(this.API)
+      .then((response) => response.json())
+      .then((competitors) => this.setState({ competitorPool: competitors }))
+      .catch((err) => console.log(err));
+  }
+
+  startTournament = () => {
+    const { startScreen } = this.state;
+    this.setState({ startScreen: !startScreen });
+  };
+  render() {
+    const { startScreen } = this.state;
+    console.log(startScreen);
+    return (
+      <div className="App">
+        {startScreen && <StartScreen func={this.startTournament} />}
+      </div>
+    );
+  }
 }
 
 export default App;
