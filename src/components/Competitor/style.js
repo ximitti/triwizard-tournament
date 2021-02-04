@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Borda = styled.div`
+export const Card = styled.div`
   border: 2px solid
     ${(props) => {
       switch (props.house) {
@@ -15,11 +15,15 @@ export const Borda = styled.div`
         default:
       }
     }};
+
+  max-width: 200px;
+  max-height: 400px;
+  width: 100%;
+  height: 100%;
   border-radius: 5%;
   text-align: center;
   margin: 10px;
   padding: 5px;
-  min-width: 250px;
   display: block;
   position: relative;
 
@@ -44,51 +48,43 @@ export const Borda = styled.div`
     bottom: 0;
     right: 0;
     position: absolute;
-    /* z-index: -1; */
-  }
-
-  h2 {
-    font-size: 2rem;
-    margin: 10px;
-  }
-  div {
-    font-size: 1.3rem;
+    z-index: -1;
   }
 `;
 
-export const Board = styled.div`
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-
-  h3 {
-    margin: 25px 10px 5px 10px;
-  }
+export const ImageBox = styled.div`
+  margin: 5px auto;
 `;
 
-export const QuadroComp = styled.div`
-  margin: 10px auto;
-  padding: 10px;
-  max-width: 1200px;
+export const InfoBox = styled.div`
+  margin: 5px auto;
+`;
+
+export const Info = styled.p`
+  margin: 5px;
+  font-size: 1rem;
+  text-transform: capitalize;
+  ${(props) => {
+    switch (props.house) {
+      case "Gryffindor":
+        return { color: "red" };
+      case "Slytherin":
+        return { color: "green" };
+      case "Hufflepuff":
+        return { color: "yellow" };
+      case "Ravenclaw":
+        return { color: "blue" };
+      default:
+    }
+  }}
+`;
+
+export const Picture = styled.img`
+  max-width: 190px;
+  max-height: 250px;
+  min-width: 190px;
+  min-height: 250px;
   width: 100%;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-`;
-
-export const TournamentAnnounce = styled.div`
-  margin: 10px auto;
-  max-width: 1200px;
-  width: 100%;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-
-  h1 {
-    margin: 15px;
-  }
-
-  h3 {
-    margin: 10px 10px 20px 10px;
-  }
+  height: 100%;
+  border-radius: 5%;
 `;
