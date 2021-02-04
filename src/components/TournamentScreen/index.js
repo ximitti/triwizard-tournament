@@ -16,7 +16,7 @@ class TournamentScreen extends Component {
             </div>
           );
         })}
-        <Button func={func} />
+        <Button func={func} text="Try again!" />
       </div>
     );
   }
