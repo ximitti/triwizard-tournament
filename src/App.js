@@ -79,7 +79,7 @@ class App extends Component {
   render() {
     const { startScreen, houses, championsList } = this.state;
     return (
-      <div className="App">
+      <div className="App-header">
         {startScreen && (
           <StartScreen func={this.startTournament} houses={houses} />
         )}
