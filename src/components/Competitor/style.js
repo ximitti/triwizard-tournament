@@ -51,7 +51,7 @@ export const Card = styled.div`
   transition: 0.5s;
   background: linear-gradient(45deg, #aaa, #ccc);
   /* animation: ${pulse} 3s ease-out alternate infinite; */
-  animation: ${startBlur} 3s ease-out;
+  animation: ${startBlur} 2.5s ease;
 
   &:hover {
     cursor: pointer;
