@@ -9,7 +9,7 @@ class Competitor extends Component {
         <ImageBox>
           <Picture src={champion.image} alt={champion.name} />
         </ImageBox>
-        <InfoBox>
+        <InfoBox house={champion.house}>
           <Info>{champion.name}</Info>
           <Info house={champion.house}>{champion.house}</Info>
         </InfoBox>

@@ -24,6 +24,16 @@ export const Card = styled.div`
   text-align: center;
   margin: 10px;
   padding: 5px;
+  background-color: #ccc;
+`;
+
+export const ImageBox = styled.div`
+  margin: 5px auto;
+`;
+
+export const InfoBox = styled.div`
+  margin: 5px auto;
+  padding: 5px;
   display: block;
   position: relative;
 
@@ -48,16 +58,8 @@ export const Card = styled.div`
     bottom: 0;
     right: 0;
     position: absolute;
-    z-index: -1;
+    border-radius: 10px;
   }
-`;
-
-export const ImageBox = styled.div`
-  margin: 5px auto;
-`;
-
-export const InfoBox = styled.div`
-  margin: 5px auto;
 `;
 
 export const Info = styled.p`
@@ -75,6 +77,7 @@ export const Info = styled.p`
       case "Ravenclaw":
         return { color: "blue" };
       default:
+        return { color: "black" };
     }
   }}
 `;
