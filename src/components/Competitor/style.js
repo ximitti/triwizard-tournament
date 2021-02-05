@@ -1,4 +1,28 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const pulse = keyframes`
+  0% {
+    background-color: #888;
+  }
+  50% {
+    background-color: #aaa;
+  }
+  100% {
+    background-color: #ccc;
+  }
+`;
+
+const startBlur = keyframes`
+  0% {
+    filter: blur(30px);
+  }
+  50% {
+    filter: blur(15px);
+  }
+  100% {
+    filter: blur(0px);
+  }
+`;
 
 export const Card = styled.div`
   border: 2px solid
@@ -17,14 +41,23 @@ export const Card = styled.div`
     }};
 
   max-width: 200px;
-  max-height: 400px;
+  max-height: 350px;
   width: 100%;
   height: 100%;
   border-radius: 5%;
   text-align: center;
   margin: 10px;
   padding: 5px;
-  background-color: #ccc;
+  transition: 0.5s;
+  background: linear-gradient(45deg, #aaa, #ccc);
+  /* animation: ${pulse} 3s ease-out alternate infinite; */
+  animation: ${startBlur} 3s ease-out;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    box-shadow: 0 0 5px #333333;
+  }
 `;
 
 export const ImageBox = styled.div`

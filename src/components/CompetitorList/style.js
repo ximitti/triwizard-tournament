@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const CardBoard = styled.div`
-  margin: 20px auto;
-  padding: 15px;
+  margin: 40px auto;
+  padding: 25px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;

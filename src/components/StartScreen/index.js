@@ -1,12 +1,18 @@
 import { Component } from "react";
 import Button from "../Button";
-import { Board, Borda, QuadroComp, TournamentAnnounce } from "./style.js";
+import {
+  Board,
+  Borda,
+  QuadroComp,
+  TournamentAnnounce,
+  Container,
+} from "./style.js";
 
 class StartScreen extends Component {
   render() {
     const { gryffindor, slytherin, hufflepuff, ravenclaw } = this.props.houses;
     return (
-      <div>
+      <Container>
         <Board>
           <TournamentAnnounce>
             <h1>Triwizard Tournament</h1>
@@ -29,21 +35,21 @@ class StartScreen extends Component {
                 <div key={index}>{competitor.name}</div>
               ))}
             </Borda>
-            <Borda house="Hufflepuff">
-              <h2>Hufflepuff</h2>
-              {hufflepuff.map((competitor, index) => (
-                <div key={index}>{competitor.name}</div>
-              ))}
-            </Borda>
             <Borda house="Ravenclaw">
               <h2>Ravenclaw</h2>
               {ravenclaw.map((competitor, index) => (
                 <div key={index}>{competitor.name}</div>
               ))}
             </Borda>
+            <Borda house="Hufflepuff">
+              <h2>Hufflepuff</h2>
+              {hufflepuff.map((competitor, index) => (
+                <div key={index}>{competitor.name}</div>
+              ))}
+            </Borda>
           </QuadroComp>
         </Board>
-      </div>
+      </Container>
     );
   }
 }

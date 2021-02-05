@@ -44,15 +44,16 @@ export const Borda = styled.div`
     bottom: 0;
     right: 0;
     position: absolute;
-    /* z-index: -1; */
   }
 
   h2 {
-    font-size: 2rem;
+    font-size: 1.2rem;
     margin: 10px;
+    text-shadow: 2px 2px #333;
   }
   div {
-    font-size: 1.3rem;
+    font-size: 1rem;
+    text-shadow: 2px 2px #333;
   }
 `;
 
@@ -60,9 +61,12 @@ export const Board = styled.div`
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+  margin: 100px;
 
   h3 {
+    font-size: 1.5rem;
     margin: 25px 10px 5px 10px;
+    text-shadow: 2px 2px #333;
   }
 `;
 
@@ -83,12 +87,32 @@ export const TournamentAnnounce = styled.div`
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+  font-family: "HP", sans-serif;
+  font-weight: lighter;
 
   h1 {
     margin: 15px;
+    font-size: 5rem;
+    text-shadow: 2px 2px #333;
   }
 
   h3 {
     margin: 10px 10px 20px 10px;
+    text-shadow: 2px 2px #333;
+  }
+`;
+
+export const Container = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background-image: url("./images/tela_inicial.jpeg");
+  background-size: cover;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+
+  &:after {
+    opacity: 0.3;
   }
 `;
